@@ -1,0 +1,25 @@
+import requests
+import json
+
+# Sample API call to an LLM (replace with actual API endpoint and key)
+def analyze_sentiment(review, api_key):
+    url = "https://api.x.ai/grok3"
+    prompt = f"Classify the sentiment of the following review as Positive, Negative, or Neutral:\nReview: \"{review}\"\nSentiment:"
+    headers = {"Authorization": f"Bearer {api_key}"}
+    data = {"prompt": prompt, "max_tokens": 50}
+    
+    response = requests.post(url, json=data, headers=headers)
+    result = response.json()
+    return result["choices"][0]["text"].strip()
+
+# Example usage
+reviews = [
+    "I love the fast delivery and quality!",
+    "The screen broke after a week.",
+    "Great product, but pricey."
+]
+
+api_key = "your-api-key"
+for review in reviews:
+    sentiment = analyze_sentiment(review, api_key)
+    print(f"Review: {review}\nSentiment: {sentiment}\n")
