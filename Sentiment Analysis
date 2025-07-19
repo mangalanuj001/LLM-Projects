@@ -20,6 +20,8 @@ reviews = [
 ]
 
 api_key = "your-api-key"
+
+#Note: Replace your-api-key and the API endpoint with actual values from xAI's API service (visit https://x.ai/api for details). For production use, fine-tune the model on domain-specific data to improve accuracy.
 for review in reviews:
     sentiment = analyze_sentiment(review, api_key)
     print(f"Review: {review}\nSentiment: {sentiment}\n")
