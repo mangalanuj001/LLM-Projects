@@ -1,9 +1,0 @@
-langgraph
-langchain
-langsmith
-python-dotenv
-langchain-groq
-langchain_tavily
-streamlit
-langgraph-cli[inmem] #langgraph in memory... from this we can run run any graph in the Langgraph studio in Langgraph/Langsmith cloud
-pandas
